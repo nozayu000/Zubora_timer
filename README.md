@@ -1,28 +1,46 @@
-<<<<<<< HEAD
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
 # Zubora_timer
->>>>>>> origin/main
+
+## サイト概要
+インターバル形式のタイマーを使って筋トレを行う。  
+かつ、カレンダーに達成したものを可視化する。  
+
+### サイトテーマ
+ズボラ人間に継続力を！
+
+### テーマを選んだ理由
+・私自身がズボラで継続が苦手な人間である。   
+・しかし年齢によって筋力低下は否めない、そして抗いたいと思っているため、  
+　YouTubeを見ながら簡単で続きそうなメニューを見ながら行う。
+・簡単なメニューのため覚えてしまう。
+・そこでインターバル形式のタイマーだけあればいいと思いアプリを探す。
+・できればカレンダーに筋トレした日はチェックが入るような可視化があると尚良いと思い始める。  
+・しかし、アプリがあるにはあるけど連動という形でアプリをそれぞれDLする必要があり面倒だと感じる。
+
+と、いうストーリーがあったため、タイマーとカレンダーのみのwebアプリを作成しようと思い至る。
+またアプリのように可視情報は少なく、かつ入力項目も少なめにシンプルにした見た目がよい。
+なぜならズボラ人間は見る情報や入力項目が多ければ多いほど億劫さを感じるからである。
+始める前に億劫さを感じて筋トレをやらないのでは本末転倒である。
+
+
+### ターゲットユーザ
+ズボラな人間だけど筋力低下は妨げたいと思っているユーザー
+
+### 主な利用シーン
+筋トレ
+時には時間制限を設けて行えるタスクなどに活用も可
+
+## 設計書
+<...>
+
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1V17qWc7qBN_3RxLgdWhazDAWsu86oLYzowTrKVf1r7Y/edit#gid=0
+
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
+使用検討中です。
