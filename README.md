@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Zubora_timer
 
 ## サイト概要
@@ -44,3 +45,6 @@ https://docs.google.com/spreadsheets/d/1V17qWc7qBN_3RxLgdWhazDAWsu86oLYzowTrKVf1
 
 ## 使用素材
 使用検討中です。
+=======
+# Zubora_timer
+>>>>>>> origin/main
