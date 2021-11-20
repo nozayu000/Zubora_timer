@@ -2,7 +2,7 @@
 
 ## サイト概要
 インターバル形式のタイマーを使って筋トレを行う。
-筋トレできた日をカレンダーにチェックして可視化しモチベを保つ。
+筋トレできた日をカレンダーに自動チェックして可視化しモチベーションを保つ。
 
 ### サイトテーマ
 ズボラ人間に継続力を！
@@ -36,11 +36,14 @@
 ・テーブル定義書
     https://docs.google.com/spreadsheets/d/1YTPdaEvALga9BfP7Vdx43044j-JZA8Wk_XO3CEAmvPQ/edit?usp=sharing
 
+・アプリケーション詳細設計書
+  考え中
 ・画面構成
 　考え中
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1V17qWc7qBN_3RxLgdWhazDAWsu86oLYzowTrKVf1r7Y/edit#gid=0
+
 
 ## 開発環境
 - OS：Linux(CentOS)
