@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  timer_id: 1
+  workout_daily: 1
+  workout_weekly: 1
+  workout_age: 1
+  workout_amount: 1
+
+two:
+  user_id: 1
+  timer_id: 1
+  workout_daily: 1
+  workout_weekly: 1
+  workout_age: 1
+  workout_amount: 1

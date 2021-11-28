@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  second_work: 1
+  second_rest: 1
+  set_time: 1
+  amount: 1
+
+two:
+  user_id: 1
+  second_work: 1
+  second_rest: 1
+  set_time: 1
+  amount: 1
