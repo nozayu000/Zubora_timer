@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 2021_11_28_033236) do
   end
 
   create_table "likes", force: :cascade do |t|
-    # t.integer "user_id"
-    # t.integer "timer_id"
-    # t.integer "like_quantity"
+    t.integer "user_id"
+    t.integer "timer_id"
+    t.integer "like_quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "followed_id"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2021_11_28_033236) do
     t.integer "workout_daily"
     t.integer "workout_weekly"
     t.integer "workout_age"
+    t.integer "workout_amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "workout_generation"
@@ -59,8 +60,8 @@ ActiveRecord::Schema.define(version: 2021_11_28_033236) do
 
   create_table "timers", force: :cascade do |t|
     t.integer "user_id"
-    # t.integer "second_work"
-    # t.integer "second_rest"
+    t.integer "second_work"
+    t.integer "second_rest"
     t.integer "set_time"
     t.integer "amount"
     t.datetime "created_at", null: false
@@ -75,14 +76,13 @@ ActiveRecord::Schema.define(version: 2021_11_28_033236) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nickname"
     t.integer "age"
-    t.string "name"
-    # t.string "last_nmae"
-    t.string "last_name"
-    t.string "first_name"
+    # t.string "last_name"
+    # t.string "first_name"
     t.boolean "is_deleted"
     t.boolean "public"
     t.index ["email"], name: "index_users_on_email", unique: true
