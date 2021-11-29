@@ -55,7 +55,18 @@
         <%= f.submit "新規登録", class: "btn btn-success" %>
       </div>
     <% end %>
+    
+  　<div>
+    <h3>twitterアカウントをお持ちの方</h3>
+    <% if user_signed_in? %>
+      <%= link_to 'Twitter Logout', sessions_destroy_path %>
+    <% else %>
+      <%= link_to 'こちら', user_twitter_omniauth_authorize_path %>
+    <% end %>
+    からログインしてください
+    </div>
 
+    <div>
     <h3>既に登録済みの方</h3>
     <% if controller_name != 'sessions' %>
       <%= link_to "こちら", new_session_path(resource_name) %>

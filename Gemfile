@@ -62,3 +62,15 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+gem 'kaminari'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+gem 'i18n_generators'
+gem 'font-awesome-rails'
+gem 'devise-i18n'
+gem 'font-awesome-sass', '~> 5.13'
+gem "rails-i18n"
+gem 'pry-byebug'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'dotenv-rails'
