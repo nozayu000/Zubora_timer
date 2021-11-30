@@ -1,30 +1,16 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  
+
   devise :database_authenticatable, :registerable,
-       :recoverable, :rememberable, :validatable, :omniauthable
-  
-  def self.find_for_oauth(auth)
-    user = User.where(uid: auth.uid, provider: auth.provider).first
+       :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:twitter]
 
-    unless user
-      user = User.create(
-        uid:      auth.uid,
-        provider: auth.provider,
-        email:    User.dummy_email(auth),
-        password: Devise.friendly_token[0, 20]
-      )
-      user.save!
-    end
+  has_many :sns_credentials
 
-    current_user = user
-  end
+# クラスメソッドを定義する
+ def self.from_omniauth(auth)
+  # 定義できたら「binding.pry」を記述しSNSから情報を取得できるか確認してみましょう
+  binding.pry
+ end
 
-    private
-
-      def self.dummy_email(auth)
-        "#{auth.uid}-#{auth.provider}@example.com"
-      end
-  
 end

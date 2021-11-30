@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_124329) do
+ActiveRecord::Schema.define(version: 2021_11_30_094546) do
 
   create_table "calendars", force: :cascade do |t|
     t.integer "user_id"
@@ -56,6 +56,11 @@ ActiveRecord::Schema.define(version: 2021_11_29_124329) do
     t.integer "workout_generation"
     t.integer "workout_month"
     t.integer "workout_amounts"
+  end
+
+  create_table "sns_credentials", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "timers", force: :cascade do |t|

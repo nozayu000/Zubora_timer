@@ -73,4 +73,5 @@ gem "rails-i18n"
 gem 'pry-byebug'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails'
