@@ -4,19 +4,16 @@ Rails.application.routes.draw do
         sessions: 'devise/sessions',
         registrations: 'devise/registrations'
       }
-    
-      root "homes#top"
+
+      root "homes#index"
       get "about" => "homes#about"
-      resources :users
-      
-    namespace :customers do
-     get 'show' => 'users#show'
-     get 'users/edit' => 'users#edit'
-     patch 'update' => 'users#update'
-     get 'unsubscribe' => 'users#unsubscribe'
-     patch 'users/withdraw' => 'users#withdraw', as: 'users_withdraw'
-     
-    end
-      
-      
+      # post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
+      devise_scope :user do
+        post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+      end
+      resources :users do
+       get 'unsubscribe' => 'users#unsubscribe'
+       patch 'withdraw' => 'users#withdraw'
+      end
+
 end

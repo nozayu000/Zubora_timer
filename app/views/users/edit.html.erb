@@ -25,7 +25,7 @@
         <div class="actions col-xs-10 col-xs-offset-2">
           <p>
             <%= f.submit "編集内容を保存", class: "btn btn-primary col-sm-3" %>
-            <%#= link_to " 退会する", customers_unsubscribe_path, class: "glyphicon glyphicon-tint btn btn-danger text-align: left" %>
+            <%= link_to " 退会する",  user_unsubscribe_path(@user.id), class: "glyphicon glyphicon-tint btn btn-danger text-align: left" %>
           </p>
         </div>
       <% end %>
