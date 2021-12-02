@@ -10,29 +10,29 @@
           <%= f.text_field :name,autoforcus: true, autocomplete: "name"%>
         </div>
       </div><br>
-    
+
       <div class="row">
         <label class="col-lg-4">メールアドレス</label>
         <div class="col-lg-3">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "\uf0e0", class: 'fa' %>
         </div>
       </div><br>
-    
-    
+
+
       <div class="row">
         <label class="col-lg-4">ニックネーム</label>
         <div class="col-lg-3">
-          <%= f.email_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "\uf0e0", class: 'fa' %>
+          <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "\uf0e0", class: 'fa' %>
         </div>
       </div><br>
-    
+
       <div class="row">
         <label class="col-lg-4">年齢</label>
         <div class="col-lg-3">
-          <%= f.email_field :age, autofocus: true, autocomplete: "age", placeholder: "\uf0e0", class: 'fa' %>
+          <%= f.text_field :age, autofocus: true, autocomplete: "age", placeholder: "\uf0e0", class: 'fa' %>
         </div>
       </div><br>
-    
+
       <div class="row">
         <label class="col-lg-4">パスワード
         <% if @minimum_password_length %>
@@ -43,14 +43,14 @@
           <%= f.password_field :password, autocomplete: "new_password",  placeholder: "\uf023", class: 'fa' %>
         </div>
       </div><br>
-      
+
       <div class="row">
         <label class="col-lg-4">パスワード（確認用）</label>
         <div class="col-lg-3">
           <%= f.password_field :password_confirmation, autocomplete: "new_password",  placeholder: "\uf023", class: 'fa' %>
         </div>
         </div><br>
-    
+
       <div class="actions">
         <%= f.submit "新規登録", class: "btn btn-success" %>
       </div>

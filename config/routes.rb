@@ -8,4 +8,15 @@ Rails.application.routes.draw do
       root "homes#top"
       get "about" => "homes#about"
       resources :users
+      
+    namespace :customers do
+     get 'show' => 'users#show'
+     get 'users/edit' => 'users#edit'
+     patch 'update' => 'users#update'
+     get 'unsubscribe' => 'users#unsubscribe'
+     patch 'users/withdraw' => 'users#withdraw', as: 'users_withdraw'
+     
+    end
+      
+      
 end

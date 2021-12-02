@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-xs-9" style="padding-right: 10px; padding-left: 70px;">
       <h2>会員の方はこちらからログイン</h2>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
         <div class="row">
         <label class="col-lg-4">メールアドレス</label>
         <div class="col-lg-3">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "\uf0e0", class: 'fa' %>
         </div>
       </div><br>
-       
+
       <div class="row">
         <label class="col-lg-4">パスワード
         <% if @minimum_password_length %>
@@ -20,7 +20,7 @@
           <%= f.password_field :password, autocomplete: "current_password",  placeholder: "\uf023", class: 'fa' %>
         </div>
       </div><br>
-      
+
       <div class="actions">
         <%= f.submit "ログイン", class: "btn btn-primary" %>
       </div>
@@ -29,7 +29,7 @@
       <br><br>
       <% end %>
       <% end %>
-  
+
       <div class="row">
         <div class="col-xs-5">
           <h4>登録がお済でない方</h4>

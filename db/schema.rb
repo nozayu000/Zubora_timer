@@ -81,8 +81,8 @@ ActiveRecord::Schema.define(version: 2021_11_28_033236) do
     t.datetime "updated_at", null: false
     t.string "nickname"
     t.integer "age"
-    # t.string "last_name"
-    # t.string "first_name"
+    t.string "last_name"
+    t.string "first_name"
     t.boolean "is_deleted"
     t.boolean "public"
     t.index ["email"], name: "index_users_on_email", unique: true
