@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'timers/index'
+  get 'timers/show'
+  get 'calendars/index'
+  get 'rankings/index'
+  get 'rankings/show'
+  get 'comments/index'
+  get 'likes/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     devise_for :users, controllers: {
         sessions: 'devise/sessions',

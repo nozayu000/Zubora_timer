@@ -13,6 +13,12 @@ class User < ApplicationRecord
       user.age = 45
       user.pablic = true
     end
-
   end
+  
+  has_many :timers, dependent: :destroy
+  has_many :calendars, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :rankings, dependent: :destroy
+  
 end

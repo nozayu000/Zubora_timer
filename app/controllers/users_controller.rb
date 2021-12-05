@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     end
 
     private
-        def customer_params
+        def user_params
             params.require(:user).permit(:name, :email, :nickname, :age, :is_deleted)
         end
 end
