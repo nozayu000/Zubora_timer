@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'timers/index'
-  get 'timers/show'
   get 'calendars/index'
   get 'rankings/index'
   get 'rankings/show'
