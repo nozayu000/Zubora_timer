@@ -49,10 +49,24 @@
         <div class="col-lg-3">
           <%= f.password_field :password_confirmation, autocomplete: "new_password",  placeholder: "\uf023", class: 'fa' %>
         </div>
-        </div><br>
+      </div><br>
+
+      <div class="row">
+        <label class="col-lg-4">情報公開</label>
+        <div class="col-lg-3">
+        <%= f.radio_button :public, :true %>
+        <%= f.label :public, "公開"  %></td>
+        <td><%= f.radio_button :public, :false %>
+        <%= f.label :public, "非公開" %></td>
+      </tr>
+        </div>
+      </div><br>
+
+
+
 
       <div class="actions">
-        <%= f.submit "新規登録", class: "btn btn-success" %>
+        <%= f.submit "新規登録", class: "btn btn-success", style: "font-family: HiraMinPro-W6;"%>
       </div>
     <% end %>
 

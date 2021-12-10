@@ -24,6 +24,15 @@
           <div class="col-xs-2">年齢</div>
           <div><%= current_user.age %></div></br>
         </tr>
+        <tr>
+          <div class="col-xs-2">情報公開</div>
+            <% if @user.public == true %>
+              <div class="status_true">公開</div>
+            <% else %>
+              <div class="status_falese">非公開</div>
+            <% end %>
+          </div>
+        </tr>
       </table>
     </div>
   </div>

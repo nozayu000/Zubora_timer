@@ -20,6 +20,13 @@
             <%= f.label :"年齢", class: "col-sm-3 control-label", style: "margin: 10px;" %>
             <%= f.text_field :age, class: "col-sm-8 form-control-static", style: "margin: 10px;" %>
           </div>
+          <div class="col-xs-12">
+            <%= f.label :"情報公開", class: "col-sm-3 control-label", style: "margin: 10px;" %>
+            <%= f.radio_button :public, :true %>
+            <%= f.label :public, "公開"  %>
+            <%= f.radio_button :public, :false %>
+            <%= f.label :public, "非公開" %>
+          </div>
         </div>
 
         <div class="actions col-xs-10 col-xs-offset-2">
