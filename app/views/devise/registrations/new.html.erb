@@ -1,80 +1,72 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-9" style="padding-right: 10px; padding-left: 70px;">
-    <h3>新規会員登録</h3>
-    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="row">
-        <label class="col-lg-4">名前</label>
-        <div class="col-lg-4">
-          <%= f.text_field :name,autoforcus: true, autocomplete: "name"%>
-        </div>
-      </div><br>
-
-      <div class="row">
-        <label class="col-lg-4">メールアドレス</label>
-        <div class="col-lg-3">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "\uf0e0", class: 'fa' %>
-        </div>
-      </div><br>
-
-
-      <div class="row">
-        <label class="col-lg-4">ニックネーム</label>
-        <div class="col-lg-3">
-          <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "\uf0e0", class: 'fa' %>
-        </div>
-      </div><br>
-
-      <div class="row">
-        <label class="col-lg-4">年齢</label>
-        <div class="col-lg-3">
-          <%= f.text_field :age, autofocus: true, autocomplete: "age", placeholder: "\uf0e0", class: 'fa' %>
-        </div>
-      </div><br>
-
-      <div class="row">
-        <label class="col-lg-4">パスワード
-        <% if @minimum_password_length %>
-          (<%= @minimum_password_length %>文字以上)
-        <% end %>
-        </label>
-        <div class="col-lg-3">
-          <%= f.password_field :password, autocomplete: "new_password",  placeholder: "\uf023", class: 'fa' %>
-        </div>
-      </div><br>
-
-      <div class="row">
-        <label class="col-lg-4">パスワード（確認用）</label>
-        <div class="col-lg-3">
-          <%= f.password_field :password_confirmation, autocomplete: "new_password",  placeholder: "\uf023", class: 'fa' %>
-        </div>
-      </div><br>
-
-      <div class="row">
-        <label class="col-lg-4">情報公開</label>
-        <div class="col-lg-3">
-        <%= f.radio_button :public, :true %>
-        <%= f.label :public, "公開"  %></td>
-        <td><%= f.radio_button :public, :false %>
-        <%= f.label :public, "非公開" %></td>
-      </tr>
-        </div>
-      </div><br>
-
-
-
-
-      <div class="actions">
-        <%= f.submit "新規登録", class: "btn btn-success", style: "font-family: HiraMinPro-W6;"%>
+<div class="kakomi-maru4">
+  <span class="title-maru4">新規会員登録</span>
+  <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="row">
+      <label class="col-lg-4">名前</label>
+      <div class="col-lg-4">
+        <%= f.text_field :name,autoforcus: true %>
       </div>
-    <% end %>
+    </div><br>
 
-    <h3>既に登録済みの方</h3>
-    <% if controller_name != 'sessions' %>
-      <%= link_to "こちら", new_session_path(resource_name) %>
-    <% end %>
-    からログインしてください
+    <div class="row">
+      <label class="col-lg-4">メールアドレス</label>
+      <div class="col-lg-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "\uf0e0", class: 'fa' %>
+      </div>
+    </div><br>
+
+
+    <div class="row">
+      <label class="col-lg-4">ニックネーム</label>
+      <div class="col-lg-3">
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "\uf0e0", class: 'fa' %>
+      </div>
+    </div><br>
+
+    <div class="row">
+      <label class="col-lg-4">年齢</label>
+      <div class="col-lg-3">
+        <%= f.text_field :age, autofocus: true, autocomplete: "age", placeholder: "\uf0e0", class: 'fa' %>
+      </div>
+    </div><br>
+
+    <div class="row">
+      <label class="col-lg-4">パスワード
+      <% if @minimum_password_length %>
+        (<%= @minimum_password_length %>文字以上)
+      <% end %>
+      </label>
+      <div class="col-lg-3">
+        <%= f.password_field :password, autocomplete: "new_password",  placeholder: "\uf023", class: 'fa' %>
+      </div>
+    </div><br>
+
+    <div class="row">
+      <label class="col-lg-4">パスワード（確認用）</label>
+      <div class="col-lg-3">
+        <%= f.password_field :password_confirmation, autocomplete: "new_password",  placeholder: "\uf023", class: 'fa' %>
+      </div>
+    </div><br>
+
+    <div class="row">
+      <label class="col-lg-4">情報公開</label>
+          <div class="col-lg-3">
+          <%= f.radio_button :public, :true %>
+          <%= f.label :public, "公開"  %></td>
+          <td><%= f.radio_button :public, :false %>
+          <%= f.label :public, "非公開" %></td>
+        </tr>
+          </div>
     </div>
-  </div>
+    <div class="actions">
+      <%= f.submit "新規登録", class: "btn btn-outline-success", style: "margin-bottom: 10px" %>
+    </div>
+  <% end %>
+
+  <h6>既に登録済みの方</h6>
+  <% if controller_name != 'sessions' %>
+    <%= link_to "こちら", new_session_path(resource_name) %>
+  <% end %>
+  からログインしてください
 </div>

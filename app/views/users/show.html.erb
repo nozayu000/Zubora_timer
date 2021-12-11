@@ -1,39 +1,23 @@
-<div class = "container">
-  <div class="row">
-    <div class="col-xs-12">
-    <h3><strong>マイページ</strong></h3>
-
-      <table class="table table-bordered table-condensed">
-        <p>
-          <strong class="information-link">登録情報</strong>
-          <%= link_to " 編集する", edit_user_path, class: "glyphicon glyphicon-pencil btn btn-success" %>
-        </p>
-        <tr>
-          <div class="col-xs-2">氏名</div>
-          <div><%= current_user.name %></div></br>
-        </tr>
-        <tr>
-          <div class="col-xs-2">メールアドレス</div>
-          <div><%= current_user.email %></div></br>
-        </tr>
-        <tr>
-          <div class="col-xs-2">ニックネーム</div>
-          <div><%= current_user.nickname %></div></br>
-        </tr>
-        <tr>
-          <div class="col-xs-2">年齢</div>
-          <div><%= current_user.age %></div></br>
-        </tr>
-        <tr>
-          <div class="col-xs-2">情報公開</div>
-            <% if @user.public == true %>
-              <div class="status_true">公開</div>
-            <% else %>
-              <div class="status_falese">非公開</div>
-            <% end %>
-          </div>
-        </tr>
-      </table>
-    </div>
-  </div>
+<div class="kakomi-maru4">
+  <span class="title-maru4">登録情報</span>
+  <%= link_to " 編集する", edit_user_path, class: "btn btn-outline-success col-sm-3"%>
+  <br>
+  <br>
+    <tr>氏名</tr>
+    <td><%= current_user.name %></td></br>
+    <tr>メールアドレス</tr>
+    <td><%= current_user.email %></td></br>
+    <tr>ニックネーム</tr>
+    <td><%= current_user.nickname %></td></br>
+    <tr>年齢</tr>
+    <td><%= current_user.age %></td></br>
+    <tr>情報公開</tr>
+    <td>
+      <% if @user.public == true %>
+        公開
+      <% else %>
+      非公開
+      <% end %>
+    </td>
+  </br>
 </div>

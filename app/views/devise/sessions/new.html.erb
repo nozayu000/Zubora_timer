@@ -1,49 +1,41 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-9" style="padding-right: 10px; padding-left: 70px;">
-      <h2>会員の方はこちらからログイン</h2>
-      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-        <div class="row">
-        <label class="col-lg-4">メールアドレス</label>
+<div class="kakomi-maru4">
+  <span class="title-maru4">会員の方はこちら</span>
+  <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+   <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="row">
+      <label class="col-lg-4">メールアドレス</label>
         <div class="col-lg-3">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "\uf0e0", class: 'fa' %>
         </div>
-      </div><br>
-
-      <div class="row">
-        <label class="col-lg-4">パスワード
-        <% if @minimum_password_length %>
-          (<%= @minimum_password_length %>文字以上)
-        <% end %>
-        </label>
-        <div class="col-lg-3">
-          <%= f.password_field :password, autocomplete: "current_password",  placeholder: "\uf023", class: 'fa' %>
-        </div>
-      </div><br>
-
-      <div class="actions">
-        <%= f.submit "ログイン", class: "btn btn-primary",style: "font-family: HiraMinPro-W6;" %>
-      </div>
-      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-      <%= link_to "=> パスワードを忘れた方はこちら", new_password_path(resource_name) %>
-      <br><br>
-      <% end %>
-      <% end %>
-
-      <div class="row">
-        <div class="col-xs-5">
-          <h4>登録がお済でない方</h4>
-          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-            <%= link_to "こちら", new_registration_path(resource_name) %>
-            <strong>から新規登録を行ってください。</strong>
-          <% end %>
-        </div>
-        <!--<div class="col-xs-5">-->
-          <!--<h4>管理者の方</h4>-->
-          <%#= link_to "こちら", new_admin_session_path %>
-          <!--<strong>からログインしてください</strong>-->
-        </div>
-      </div>
     </div>
+
+    <div class="row">
+      <label class="col-lg-4">パスワード
+      <% if @minimum_password_length %>
+        (<%= @minimum_password_length %>文字以上)
+      <% end %>
+      </label>
+      <div class="col-lg-3">
+        <%= f.password_field :password, autocomplete: "current_password",  placeholder: "\uf023", class: 'fa' %>
+      </div>
+    </div><br>
+
+  <div class="actions">
+    <%= f.submit "ログイン", class: "btn btn-outline-primary" %>
   </div>
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "=> パスワードを忘れた方はこちら", new_password_path(resource_name) %>
+  <br><br>
+  <% end %>
+  <% end %>
+  
+  <h6>登録がお済でない方</h6>
+    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+      <%= link_to "こちら", new_registration_path(resource_name) %>
+      <strong>から新規登録を行ってください。</strong>
+    <% end %>
 </div>
+    <!--<div class="col-xs-5">-->
+      <!--<h4>管理者の方</h4>-->
+      <%#= link_to "こちら", new_admin_session_path %>
+      <!--<strong>からログインしてください</strong>-->

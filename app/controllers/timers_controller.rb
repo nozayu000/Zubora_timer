@@ -1,5 +1,5 @@
 class TimersController < ApplicationController
-
+before_action :authenticate_user!
 def create
     @timer = Timer.new(timer_params)
     @timer.user_id = current_user.id

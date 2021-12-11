@@ -1,46 +1,40 @@
 <!DOCTYPE html>
-<html lang = "ja">
-  <head>
-    <meta charset = "utf-8">
-    <meta name = "viweport" content="width=device-wodth, initial-scale=1.0">
-    <title>Zubora_Timer</title>
-  </head>
-  <body>
-    <h1 id ="time">経過時間</h1>
-    <h3><div class="clock" id="clock">0</div></h3>
-    <svg class="progress-ring" height="120" width="120">
-        <circle class="progress-ring＿circle"
-                stroke-width="8"
-                fill="transparent"
-                r="50"
-                cx="60"
-                cy="60"
-        />
-    </svg>
-    <div class="btn_group">
-      <button id="start" style="font-family: HiraMinPro-W6;">開始</button>
-      <button id="reset" style="font-family: HiraMinPro-W6;">リセット</button>
-      <button id="stop" style="font-family: HiraMinPro-W6;">一時停止</button>
-    </div>
-
-      <!--↓audioタグにmp.3ファイル後で組み込む-->
-      <!--<audio src=""></audio>-->
-      
-    <!--</div>-->
-      <%= form_with model: @timer, url: timers_index_path, method: :PATCH do |f| %>
-      <div class="col-xs-12">
-        <%= f.label :"ワークアウト秒数", class: "col-sm-3 control-label", style: "margin: 10px;" %>
-        <%= f.text_field :work_seconds, class: "col-sm-8 form-control-static", style: "margin: 10px;" %>
+  <html  lang="ja">
+    <head>
+      <!--<link rel="stylesheet" href="times.scss">-->
+    </head>
+    <body>
+      <div id ="time" class="time"></div>
+      <h4><div class="clock" id="clock">0</div></h4>
+      <!--<svg class="progress-ring" height="120" width="120">-->
+      <!--    <circle class="progress-ring＿circle"-->
+      <!--            stroke-width="8"-->
+      <!--            fill="transparent"-->
+      <!--            r="50"-->
+      <!--            cx="60"-->
+      <!--            cy="60"-->
+      <!--    />-->
+      <!--</svg>-->
+      <div class="btn_group">
+        <button id="start" style="margin: 10px;">開始</button>
+        <button id="reset" style="margin: 10px;">リセット</button>
+        <button id="stop" style="margin: 10px;">一時停止</button>
       </div>
-      <div class="col-xs-12">
-        <%= f.label :"休憩秒数", class: "col-sm-3 control-label", style: "margin: 10px;" %>
-        <%= f.text_field :rest_seconds, class: "col-sm-4 form-control-static", style: "margin: 10px;" %>
-      </div>
-      <div class="col-xs-12">
-        <%= f.label :"セット回数", class: "col-sm-3 control-label", style: "margin: 10px;" %>
-        <%= f.text_field :set_time, class: "col-sm-4 form-control-static", style: "margin: 10px;" %>
-      </div>
-      
-    <% end %>
-  </body>
+  
+        <%= form_with model: @timer, url: timers_index_path, method: :PATCH do |f| %>
+        <div class="col-xs-12">
+          <%= f.label :"ワークアウト秒数", class: "col-sm-3 control-label", style: "margin: 10px;" %>
+          <%= f.text_field :work_seconds, class: "col-sm-8 form-control-static", style: "margin: 10px;" %>
+        </div>
+        <div class="col-xs-12">
+          <%= f.label :"休憩秒数", class: "col-sm-3 control-label", style: "margin: 10px;" %>
+          <%= f.text_field :rest_seconds, class: "col-sm-4 form-control-static", style: "margin: 10px;" %>
+        </div>
+        <div class="col-xs-12">
+          <%= f.label :"セット回数", class: "col-sm-3 control-label", style: "margin: 10px;" %>
+          <%= f.text_field :set_time, class: "col-sm-4 form-control-static", style: "margin: 10px;" %>
+        </div>
+        
+      <% end %>
+    </body>
 </html>

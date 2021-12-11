@@ -7,64 +7,77 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
-
-  <body id="container" style="background-color: #EEEEEE; font-family: HiraMinPro-W6; color: #000000;">
+  <body class="d-flex flex-column vh-100">
+    <header class="shadow-sm">
+      <nav class="navbar navbar-expand-g navbar-light">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <% if user_signed_in? %>
+                <ul class="nav-list">
+                  <li class="nav-item">
+                    <%= link_to "Home", root_path, class: 'nav-link text-dark'  %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "About", about_path, class: 'nav-link text-dark'  %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "マイページ", user_path(current_user.id),class: 'nav-link text-dark'  %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "タイマー", timers_index_path,class: 'nav-link text-dark'  %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "カレンダー", calendars_index_path, class: 'nav-link text-dark' %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "ランキング", rankings_index_path, class: 'nav-link text-dark'  %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
+                  </li>
+                </ul>
+              <% else %>
+                <ul>
+                  <li class="nav-item">
+                    <%= link_to "Home", root_path, class: 'nav-link text-dark'  %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "About", about_path, class: 'nav-link text-dark'  %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "新規登録",new_user_registration_path, class: 'nav-link text-dark'  %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "ログイン",new_user_session_path, class: 'nav-link text-dark'  %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login", class: 'nav-link text-dark' %>
+                  </li>
+                </ul>
+              <% end %>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <div class="container">
+      <%= yield %> 
+    </div>
+   
     
-    
-    <% if user_signed_in? %>
-    <ul>
-      <li>
-        <%= link_to "Home", root_path %>
-      </li>
-      <li>
-        <%= link_to "About", about_path %>
-      </li>
-      <li>
-        <%= link_to "マイページ", user_path(current_user.id) %>
-      </li>
-      <li>
-        <%= link_to "タイマー", timers_index_path %>
-      </li>
-      <li>
-        <%= link_to "カレンダー", calendars_index_path %>
-      </li>
-      <li>
-        <%= link_to "ランキング", rankings_index_path %>
-      </li>
-      <li>
-        <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
-      </li>
-    </ul>
-    <% else %>
-    <ul>
-      <li>
-        <%= link_to "Home", root_path %>
-      </li>
-      <li>
-        <%= link_to "About", about_path %>
-      </li>
-      <li>
-        <%= link_to "新規登録",new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン",new_user_session_path %>
-      </li>
-      <li>
-        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %></li>
-      </li>
-    </ul>
-    <% end %>
-
-    <%= yield %>
   </body>
   <footer>
-    
+
   </footer>
+
+
 </html>
