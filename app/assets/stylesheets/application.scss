@@ -22,7 +22,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 body{
   font-family: HiraMinPro-W6;
@@ -31,25 +30,19 @@ body{
   color: #000000;
   height: 100%;
   padding: 35px;
-  background:
-  linear-gradient(135deg, #d3c496 21px, #738851 22px, #738851 24px, transparent 24px, transparent 67px, #738851 67px, #738851 69px, transparent 69px),
-  linear-gradient(225deg, #d3c496 21px, #738851 22px, #738851 24px, transparent 24px, transparent 67px, #738851 67px, #738851 69px, transparent 69px)0 64px;
-  background-color: #d3c496;
-  background-size: 64px 128px;
-
 }
 
  h1 {
   position: relative;
   padding: 1rem 2rem calc(1rem + 10px);
   background: #fff;
-  background-color:rgba( 243, 255, 255, 0.8);
+  background-color: rgba( 243, 255, 255, 0.8);
 }
 
 h1:before {
   position: absolute;
   top: -9px;
-  left: -8px;
+  left: -5px;
   width: 100%;
   height: 100%;
   content: '';
@@ -82,9 +75,9 @@ h1:before {
    margin: 10px;
    text-align: center;
    padding: 10%;
-   border-radius: 20px; /* 半径が8pxの角丸 */
+   border-radius: 20px; /* 半径が5pxの角丸 */
    background-color: #fff;
-   background-color:rgba( 243, 255, 255, 0.7);
+   background-color: rgba( 243, 255, 255, 0.7);
    border: 2px solid #738851;
  }
 
@@ -99,8 +92,8 @@ h1:before {
  color: #000000; /* 文字色 */
  background-color: #fff;
  box-shadow: 2px 2px 1px #c7c7c7;/* 影の色 */
- border-radius: 8px; /* 角の丸み */
- background-color:rgba( 243, 255, 255, 0.60 );
+ border-radius: 5px; /* 角の丸み */
+ background-color: rgba( 243, 255, 255, 0.60 );
  background-blend-mode:lighten;
 }
 .title-maru4 {
@@ -131,16 +124,75 @@ input[type="email"] {
         height: 40px;
     }
 
-.time{
-  margin: 30%;
-  
-}
+
+//タイマー装飾
+    .btn_group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
+      margin: 35px 0;
+    }
+
+    #start {
+      background-color: rgba(48, 33, 253, 0.1);
+      text-color: white;
+      margin: 5px;
+      padding: 3px;
+    }
+    #break {
+      background-color: rgba(10, 252, 83, 0.1);
+
+    }
+    #reset {
+      background-color: rgba(255, 51, 51, 0.1);
+      text-color: white;
+      margin: 5px;
+       padding: 3px;
+    }
+    #stop {
+      background-color: rgba(253, 143, 17, 0.1);
+      text-color: white;
+      margin: 5px;
+       padding: 3px;
+    }
+    #restart {
+      background-color: rgba(131, 10, 252, 0.1);
+      text-color: white;
+      margin: 5px;
+      padding: 3px;
+    }
+    #clock {
+      margin: 40px 0 30px 0;
+      padding: 3px;
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 24px;
+      font-size: 45px;
+    }
+    .progress-ring {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .progress-ring＿circle {
+      transition: 0.5s;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      stroke: rgb(51, 65, 255);
+    }
+
+    .danger {
+      stroke: rgb(243, 17, 28);
+      animation: pulse 0.9s ease-in-out infinite;
+    }
 
 
 
-
-
- 
 
 
 // @charset "utf-8";
@@ -148,8 +200,8 @@ input[type="email"] {
 // @media screen and (min-width : 480px){
 // 　　// 最小幅 480px 以上の指定
 // }
-// @media screen and (min-width : 768px){
-// 　　// 最小幅 768px 以上の指定
+// @media screen and (min-width : 765px){
+// 　　// 最小幅 765px 以上の指定
 // }
 // @media screen and (min-width : 1024px){
 // 　　// 最小幅 1024px 以上の指定

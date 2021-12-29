@@ -83,6 +83,7 @@ $(document).on('turbolinks:load', function() {
   });
 
   //カウントアップ
+  
   function countup(){
     sec += 1;
     var work_time = $("#timer_work_seconds").val();
