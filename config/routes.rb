@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   }
 
   root "homes#index"
-  get "about" => "homes#about"
+  get "about" => "homes#about", as: "about"
   # post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
@@ -15,8 +15,8 @@ Rails.application.routes.draw do
    get 'unsubscribe' => 'users#unsubscribe'
    patch 'withdraw' => 'users#withdraw'
   end
-  
-  resources :timers
+
+  resources :timers, :only => [:index, :create, :update]
   resources :calendars
   resources :rankings
   resources :likes

@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang = "ja">
-  <head>
-    <meta charset = "utf-8">
-    <meta name = "viweport" content="width=device-wodth, initial-scale=1">
-    <title>Zubora_Timer</title>
-    
-  </head>
   <body>
     <section class="timer">
       <div class="clock" id="clock">000</div>
-      <!--<svg class="progress-ring" height="120" width="120">-->
-      <!--    <circle class="progress-ring＿circle"-->
-      <!--            stroke-width="8"-->
-      <!--            fill="transparent"-->
-      <!--            r="50"-->
-      <!--            cx="60"-->
-      <!--            cy="60"-->
-      <!--    />-->
-      <!--</svg>-->
+
       <form>
         <div class="btn_group">
           <input type="button" id="start" value="開始">
@@ -26,7 +10,7 @@
          <input type="button" id="reset" value="リセット" disabled>
         </div>
       </form>
-      <%= form_with model: @timer, url: timers_update_path, method: :PATCH do |f| %>
+      <%= form_with model: @timer, local: true do |f| %>
         <div class="">
           <%= f.label :"ワークアウト秒数", class: "col-sm-3 control-label"%>
           <%= f.text_field :work_seconds, class: "col-sm-2 form-control-static", style: "margin-bottom: 10px;" %>
