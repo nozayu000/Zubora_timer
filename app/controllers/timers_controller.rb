@@ -27,6 +27,6 @@ end
 
 private
   def timer_params
-      params.permit(:work_seconds, :rest_seconds, :set_time)
+      params.require(:timer).permit(:work_seconds, :rest_seconds, :set_time)
   end
 end
