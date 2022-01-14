@@ -4,7 +4,7 @@ before_action :authenticate_user!
 def index
   if params[:user_id]
     @timer = Timer.find(params[:id])
-  end 
+  end
 end
 
 def create
@@ -14,15 +14,6 @@ def create
     redirect_to @timer, notice: "秒数・回数セットしました"
   end
 end
-
-def update
-  @timer = Timer.find(params[:id])
-  @timer.update(timer_params)
-  if @timer.save
-    redirect_to @timer, notice: "更新しました"
-  end 
-end 
-
 
 
 private

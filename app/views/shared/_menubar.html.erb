@@ -1,17 +1,17 @@
 <nav class="menubar">
   <ul>
     <%= menu_link_to "TOP", :root %>
-    <%= menu_link_to "Sign up",new_user_registration_path %>
-    <%= menu_link_to "Log in",new_user_session_path %>
+    <%= menu_link_to "About", about_path %>
+    <%= menu_link_to "Sign up", user_registration_path　%>
+    <%= menu_link_to "Log in", 'devise/sessions' %>
     <%= menu_link_to 'Guests Log in', users_guest_sign_in_path, method: :post %>
-    
-    <%# if current_member %>
+
+    <% if current_user %>
       <%= menu_link_to "Mypage", "#" %>
       <%= menu_link_to "Timer", "#" %>
       <%= menu_link_to "Post", "#" %>
       <%= menu_link_to "Ranking","#" %>
-      <%= menu_link_to "Log out",destroy_user_session_path, method: :delete %>
-    <%# end %>
+      <%#= menu_link_to "Log out",destroy_user_session_path, method: :delete %>
+    <% end %>
   </ul>
 </nav>
-  
