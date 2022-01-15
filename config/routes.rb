@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  devise_for :users
-  # , controllers: {
-  #   sessions: 'devise/sessions',
-  #   registrations: 'devise/registrations'
-  # }
+  devise_for :users, controllers: {
+    sessions: 'devise/sessions',
+    registrations: 'devise/registrations'
+  }
 
   root "homes#index"
   get "about" => "homes#about", as: "about"
@@ -18,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :timers, :only => [:index, :create]
-  resources :calendars
+  resources :posts
   resources :rankings
   resources :likes
   resources :comments
