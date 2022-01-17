@@ -16,6 +16,7 @@ class User < ApplicationRecord
   end
   
   has_many :timers, dependent: :destroy
+  has_many :posts, dependent: :destroy
   has_many :calendars, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy

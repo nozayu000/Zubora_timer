@@ -16,9 +16,10 @@ Rails.application.routes.draw do
    patch 'withdraw' => 'users#withdraw'
   end
 
-  resources :timers, :only => [:index, :create]
-  resources :posts
+  resources :timers, only: [:index, :create]
+  resources :posts, only: [:new, :create, :index, :show, :destroy] do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :rankings
   resources :likes
-  resources :comments
 end

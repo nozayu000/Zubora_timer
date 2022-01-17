@@ -6,12 +6,12 @@
     <%#= menu_link_to "Log in", 'devise/sessions' %>
     <%= menu_link_to 'Guests Log in', users_guest_sign_in_path, method: :post %>
 
-    <% if current_user %>
+    <% if user_signed_in? %>
       <%= menu_link_to "Mypage", "#" %>
       <%= menu_link_to "Timer", "#" %>
-      <%= menu_link_to "Post", "#" %>
+      <%= menu_link_to "Post", posts_path %>
       <%= menu_link_to "Ranking","#" %>
-      <%#= menu_link_to "Log out",destroy_user_session_path, method: :delete %>
+      <%= menu_link_to "Log out",destroy_user_session_path, method: :delete %>
     <% end %>
   </ul>
 </nav>

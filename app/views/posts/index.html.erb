@@ -1,4 +1,15 @@
 <% @page_title = " 結果投稿" %>
 <h1><%= @page_title %></h1>
 
-<div class ="toolbar"><%= link_to "</div>
+<div class ="toolbar"><%= link_to "" %></div>
+<% @posts.each do |post| %>
+    <div>
+        <%= link_to post_path(post.id) do %>
+            <p>投稿者：<%= post.user.name%></p>
+        <% end %>
+
+        <p>ワークアウト秒数：<%= post.timer_id %></p>
+        
+        <p><%= link_to "#{post.comment_contents.count} コメント", post_path(post.id) %></p>
+    </div>
+<% end %>

@@ -1,5 +1,5 @@
 class Timer < ApplicationRecord
-  belongs_to :user
+  
   # １０００桁は設定していないため最大９９９に設定
   validates :work_seconds, presence: true, :numericality => { :less_than_or_equal_to => 999 }
   validates :rest_seconds, :numericality => {
@@ -8,4 +8,7 @@ class Timer < ApplicationRecord
               :message => '入力値が1~999の範囲外です'
            }
   validates :set_time, presence: true, :numericality => { :less_than_or_equal_to => 999 }
+  
+  belongs_to :user
+  has_many :comments, dependent: :destroy
 end
