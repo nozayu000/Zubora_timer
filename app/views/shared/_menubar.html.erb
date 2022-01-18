@@ -2,12 +2,12 @@
   <ul>
     <%= menu_link_to "TOP", :root %>
     <%= menu_link_to "About", about_path %>
-    <%#= menu_link_to "Sign up", user_registration_path　%>
+    <%#= menu_link_to "Sign up", user_registration_path%>
     <%#= menu_link_to "Log in", 'devise/sessions' %>
     <%= menu_link_to 'Guests Log in', users_guest_sign_in_path, method: :post %>
 
     <% if user_signed_in? %>
-      <%= menu_link_to "Mypage", users_path %>
+      <%= menu_link_to "Mypage", "#" %>
       <%= menu_link_to "Timer", "#" %>
       <%= menu_link_to "Post", posts_path %>
       <%= menu_link_to "Ranking","#" %>

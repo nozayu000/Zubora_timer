@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   # before_action :login_required
-  
+
   def new
     @post = Post.new
-  end 
-  
+  end
+
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
@@ -12,12 +12,12 @@ class PostsController < ApplicationController
       redirect_to posts_path
     end
     # render :new
-  end 
-  
+  end
+
   def index
-    @posts = Post.all
-  end 
-  
+    @posts = Post.page(params[:page]).reverse_order
+  end
+
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new

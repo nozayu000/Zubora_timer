@@ -9,7 +9,8 @@
         <% end %>
 
         <p>ワークアウト秒数：<%= post.timer_id %></p>
-        
-        <p><%= link_to "#{post.comment_contents.count} コメント", post_path(post.id) %></p>
+
+        <p><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>
     </div>
 <% end %>
+<%= paginate @posts %>

@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
     
     def create
-        user = User.new(user_params)
-        user.save
+        @user = User.new(user_params)
+        @user.save
         redirect_to user_path(id: current_user)
     end
     # マイページへのアクション

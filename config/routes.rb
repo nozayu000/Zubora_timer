@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :timers, only: [:index, :create]
   resources :posts, only: [:new, :create, :index, :show, :destroy] do
+    resource :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end
   resources :rankings
