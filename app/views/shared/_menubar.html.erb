@@ -7,7 +7,7 @@
     <%= menu_link_to 'Guests Log in', users_guest_sign_in_path, method: :post %>
 
     <% if user_signed_in? %>
-      <%= menu_link_to "Mypage", "#" %>
+      <%= menu_link_to "Mypage", user_path %>
       <%= menu_link_to "Timer", "#" %>
       <%= menu_link_to "Post", posts_path %>
       <%= menu_link_to "Ranking","#" %>
