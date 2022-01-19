@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'relationships/followings'
+  get 'relationships/followers'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users, controllers: {
     sessions: 'devise/sessions',
@@ -12,8 +14,11 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   resources :users do
-   get 'unsubscribe' => 'users#unsubscribe'
-   patch 'withdraw' => 'users#withdraw'
+    resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers'
+    get 'unsubscribe' => 'users#unsubscribe'
+    patch 'withdraw' => 'users#withdraw'
   end
 
   resources :timers, only: [:index, :create]
