@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     def update
         @user = current_user
         if @user.update(user_params)
+            render 'show'
         else
             render 'edit'
         end

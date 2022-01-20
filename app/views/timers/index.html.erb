@@ -7,30 +7,35 @@
 
 
     <section class="timer">
-      <div class="clock" id="clock">000</div>
 
+        <div class="clock" id="clock" style= "margin: 40px 80px;">000</div>
+
+      <%= form_with model: @timer, local:true do |f| %>
+        <div class="">
+          <%= f.label :"ワークアウト秒数", class: "col-sm-4 control-label"%>
+          <%= f.text_field :work_seconds, class: "col-sm-2 form-control-static", style: "margin-bottom: 10px;" %>
+        </div>
+        <div class="">
+          <%= f.label :"休憩秒数", class: "col-sm-4 control-label" %>
+          <%= f.text_field :rest_seconds, class: "col-sm-2 form-control-static", style: "margin-bottom: 10px;" %>
+        </div>
+        <div class="">
+          <%= f.label :"セット回数", class: "col-sm-4 control-label"%>
+          <%= f.text_field :set_time, class: "col-sm-2 form-control-static", style: "margin-bottom: 10px;" %>
+        </div>
+         <%= f.submit "保存", class: "btn btn-primary col-sm-3" ,style: "margin: 20px 40px;"%>
+      <% end %>
       <form>
-        <div class="btn_group">
+        <div class="btn_group" style= "margin: 10px;">
           <input type="button" id="start" value="開始">
           <input type="button" id="stop" value="一時停止" disabled>
           <input type="button" id="restart" value="再開" disabled>
          <input type="button" id="reset" value="リセット" disabled>
         </div>
       </form>
-      <%= form_with model: @timer, url: '/timers', local:true do |f| %>
-        <div class="">
-          <%= f.label :"ワークアウト秒数", class: "col-sm-3 control-label"%>
-          <%= f.text_field :work_seconds, class: "col-sm-2 form-control-static", style: "margin-bottom: 10px;" %>
-        </div>
-        <div class="">
-          <%= f.label :"休憩秒数", class: "col-sm-3 control-label" %>
-          <%= f.text_field :rest_seconds, class: "col-sm-2 form-control-static", style: "margin-bottom: 10px;" %>
-        </div>
-        <div class="">
-          <%= f.label :"セット回数", class: "col-sm-3 control-label"%>
-          <%= f.text_field :set_time, class: "col-sm-2 form-control-static", style: "margin-bottom: 10px;" %>
-        </div>
-        <!--秒数、セットまでやったら投稿ボタンを表示させる-->
+
+
+      <!--秒数、セットまでやったら投稿ボタンを表示させる-->
         <%# if user.public == 1 %>
           <%#= f.submit '投稿',rankings_path %>
           <%# else %>
@@ -38,8 +43,9 @@
           <%# end %>
           <%#= f.submit '投稿' %>
         <%# end %>
-        <%= f.submit "保存", class: "btn btn-primary col-sm-3" %>
-      <% end %>
+
+
+
     </section>
   </body>
 </html>

@@ -9,17 +9,21 @@ Rails.application.routes.draw do
 
   root "homes#index"
   get "about" => "homes#about", as: "about"
+
   # post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
+  resources :user do
+    get 'unsubscribe' => 'users#unsubscribe'
+    patch 'withdraw' => 'users#withdraw'
   end
   resources :users do
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
-    get 'unsubscribe' => 'users#unsubscribe'
-    patch 'withdraw' => 'users#withdraw'
   end
+
 
   resources :timers, only: [:index, :create]
   resources :posts, only: [:new, :create, :index, :show, :destroy] do
@@ -27,5 +31,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   resources :rankings
-  resources :likes
+  # resources :likes
 end
