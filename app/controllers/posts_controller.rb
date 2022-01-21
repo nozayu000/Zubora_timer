@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.page(params[:page]).reverse_order
+    
   end
 
   def show
@@ -28,6 +29,7 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
+  
  private
   def post_params
     params.require(:post).permit(:user_id, :timer_id)

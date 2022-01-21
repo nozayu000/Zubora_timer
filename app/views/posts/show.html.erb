@@ -30,6 +30,7 @@
     <% end %>
   </div>
   <div>
+  
     <%= form_with(model:[@post, @comment], local: true) do |f| %>
       <%= f.text_area :comment_contents, rows:'5',placeholder: "コメントをここに" %>
       <%= f.submit "送信する" %>

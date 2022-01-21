@@ -104,9 +104,7 @@ $(document).on('turbolinks:load', function() {
   }
 
   function break_start(){
-    $('#clock').html('0')
-    sec = 0;
-    clearInterval(timer);
+    reset();
     timer = setInterval(countup, 1000);
     rest_mode = true
     work_mode = false
@@ -116,13 +114,9 @@ $(document).on('turbolinks:load', function() {
     var set_time = $("#timer_set_time").val();
     set_num ++;
     if (set_num == set_time) {
-      $('#clock').html('0')
-      sec = 0;
-      clearInterval(timer);
+      reset();
     }else {
-      $('#clock').html('0')
-      sec = 0;
-      clearInterval(timer);
+      reset();
       timer = setInterval(countup, 1000);
       rest_mode = false
       work_mode = true
